@@ -37,6 +37,7 @@ add_test( runUnitTestCases ${TARGET_NAME} )
 add_custom_target(coverage
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
     COMMAND lcov -c -d . -o main_coverage.info --no-external
+    COMMAND lcov --remove main_coverage.info '${CMAKE_SOURCE_DIR}/test-utils/*' '${CMAKE_SOURCE_DIR}/test/*' -o main_coverage.info
     COMMAND genhtml -o res main_coverage.info
     COMMAND rm -rf ${CMAKE_BINARY_DIR}/coverage
     COMMAND mkdir -p ${CMAKE_BINARY_DIR}/coverage

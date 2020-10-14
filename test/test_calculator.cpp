@@ -48,12 +48,12 @@ protected:
 
 	TestCalculator() 
     {
-		 
+		 cout<<"TestCalculator cosntsructor\n";
 	}
 
 	virtual ~TestCalculator() 
     {
-		
+		cout<<"TestCalculator destructor \n";
 	}
 
 	// This is Per Each Fixture 
